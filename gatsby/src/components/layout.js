@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Header from './header.js';
-import Sidebar from './sidebar.js';
+import Header from './header';
+import Sidebar from './sidebar';
 
 export default ({ children }) => (
 	<>
