@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link, StaticQuery, graphql } from 'gatsby';
+import style from './index.module.scss';
 
 const Sidebar = () => (
-	<StaticQuery 
+	<StaticQuery
 		query={graphql`
 			{
 				allSitePage {
@@ -16,13 +17,18 @@ const Sidebar = () => (
 			}
 		`}
 		render={({ allSitePage: { edges } }) => (
-			<ul>
-				{edges.map(({ node: { id, path } }) => (
-					<li key={id}>
-						<Link to={path}>{id}</Link>
-					</li>
-				))}
-			</ul>
+			<div className={style.sidebar}>
+				{
+					edges.map(({
+						node: {
+							id,
+							path
+						}
+					}) => (
+						<Link to={path} key={id} className={style.navItem} >{id}</Link>
+					))
+				}
+			</div>
 		)}
 	/>
 );

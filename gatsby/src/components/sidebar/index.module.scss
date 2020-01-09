@@ -1,0 +1,45 @@
+.sidebar {
+	position: fixed;
+    left: 0;
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #fbfafc;
+    color: #000000;
+}
+
+.navItem {
+	display: flex;
+    align-items: center;
+    margin: 0 1em 0 2em;
+    padding: 0.5em 0;
+    border-bottom: 0.05em solid rgba(102, 51, 153, 0.5);
+    position: relative;
+    color: #222222;
+    text-decoration: none;
+
+    &:before {
+        content: '';
+        transition: 0.5s;
+        width: 0.5em;
+        height: 0.5em;
+        position: absolute;
+        left: -0.8em;
+        border-radius: 50%;
+        display: block;
+        background-color: #663399;
+        transform: scale(0);
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &:hover {
+      &:before {
+        transform: scale(1);
+      }
+    }
+}

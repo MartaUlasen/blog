@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, StaticQuery, graphql } from 'gatsby';
+import style from './index.module.css';
 
 const Header = () => (
 	<StaticQuery
@@ -22,9 +23,9 @@ const Header = () => (
 				]
 			}
 		}) => (
-			<header>
+			<header className={style.header}>
 				<Link to="/">
-					<img src={publicURL} alt="logo" />
+					<img  className={style.logo} src={publicURL} alt="logo" />
 				</Link>
 			</header>
 		)}
